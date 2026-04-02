@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:peach-grey-6bb.notion.site)",
+      "Read(//private/tmp/**)",
+      "Bash(unzip -o \"/Users/louislecce/Downloads/fabcb82c-6d30-4535-9554-d2205949e68c_ExportBlock-4ff7ae4e-7f8f-41ea-a83c-576dc1a7b794.zip\" -d notion_export)",
+      "Bash(unzip -o \"notion_export/ExportBlock-4ff7ae4e-7f8f-41ea-a83c-576dc1a7b794-Part-1.zip\" -d notion_content)",
+      "Bash(find '/Users/louislecce/Desktop/starter-class num' -name favicon* -o -name *.ico -o -name *quest*for*change* -o -name *questforchange*)"
+    ]
+  }
+}

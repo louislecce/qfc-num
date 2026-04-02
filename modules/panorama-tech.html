@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panorama des technologies — Culturation</title>
+  <link rel="icon" href="../favicon.png" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-back">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 8H3M7 4l-4 4 4 4"/></svg>
+        Tous les modules
+      </a>
+      <img src="../logo.svg" alt="Quest for Change" class="nav-logo-img nav-logo-dark" />
+    </div>
+  </nav>
+
+  <header class="module-hero tech">
+    <div class="module-hero-inner">
+      <div class="module-section-tag tech">🖥️ Technologies</div>
+      <h1>🗺️ Panorama des technologies numériques</h1>
+      <p class="module-hero-desc">Disposer d'un glossaire clair des principales technologies et savoir dans quels cas les utiliser.</p>
+    </div>
+  </header>
+
+  <div id="completed-banner" style="display:none; background: #D1FAE5; border-bottom: 1px solid #A7F3D0; padding: 12px 24px; align-items: center; gap: 12px;">
+    <span style="font-size:18px">✅</span>
+    <span style="font-size:14px; font-weight:600; color: #059669;">Module complété — Score : <span class="banner-score"></span></span>
+    <button onclick="scrollToQuiz()" style="margin-left:auto; font-size:13px; background:none; border:1px solid #059669; color:#059669; padding:4px 12px; border-radius:6px; cursor:pointer; font-family:inherit;">Retenter le quiz</button>
+  </div>
+
+  <div class="module-main">
+    <div class="module-content">
+
+      <div class="content-section">
+        <h2>Parler tech sans être développeur</h2>
+        <p>Un fondateur non-technique n'a pas besoin de savoir coder — mais il doit maîtriser le vocabulaire pour dialoguer efficacement avec son équipe tech, comprendre les arbitrages et ne pas se faire embarquer dans de mauvaises décisions architecturales.</p>
+        <p>Ce module est un glossaire pratique organisé par couches : du visible (frontend) à l'invisible (infrastructure), en passant par ce qui relie les deux (API, backend).</p>
+        <div class="callout info-tech">
+          <span class="callout-icon">🔑</span>
+          <p><strong>Principe clé :</strong> Tu n'as pas besoin de comprendre <em>comment</em> ça marche en détail — tu dois comprendre <em>pourquoi</em> on choisit telle ou telle approche et quelles en sont les conséquences pour le produit.</p>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>Les couches d'une application</h2>
+        <div class="concepts-grid">
+          <div class="concept-card">
+            <div class="concept-card-icon">🖥️</div>
+            <h4>Frontend</h4>
+            <p>Ce que l'utilisateur voit et avec quoi il interagit. HTML, CSS, JavaScript, React, Vue... S'exécute dans le navigateur ou sur l'appareil.</p>
+          </div>
+          <div class="concept-card">
+            <div class="concept-card-icon">⚙️</div>
+            <h4>Backend</h4>
+            <p>Le moteur invisible : logique métier, traitement des données, authentification. Node.js, Python, Ruby... S'exécute côté serveur.</p>
+          </div>
+          <div class="concept-card">
+            <div class="concept-card-icon">🔌</div>
+            <h4>API</h4>
+            <p>Interface qui permet à deux applications de communiquer. Le frontend appelle l'API pour demander des données au backend.</p>
+          </div>
+          <div class="concept-card">
+            <div class="concept-card-icon">🗄️</div>
+            <h4>Base de données</h4>
+            <p>Stockage structuré des données. SQL (relationnel, structuré) vs NoSQL (flexible, scalable). Le choix impacte l'architecture entière.</p>
+          </div>
+          <div class="concept-card">
+            <div class="concept-card-icon">☁️</div>
+            <h4>Cloud & Infrastructure</h4>
+            <p>AWS, GCP, Azure : serveurs à la demande, scalables. Évite d'acheter du matériel. On paye à l'usage.</p>
+          </div>
+          <div class="concept-card">
+            <div class="concept-card-icon">🚀</div>
+            <h4>No-code / Low-code</h4>
+            <p>Outils permettant de créer des apps sans coder (Webflow, Bubble, Make). Idéal pour valider rapidement avant de développer.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>Web, mobile, natif : quelles différences ?</h2>
+        <ul class="key-points">
+          <li><strong>Application web :</strong> accessible via navigateur, pas d'installation, mise à jour immédiate — le choix par défaut pour démarrer</li>
+          <li><strong>Application mobile native :</strong> développée pour iOS (Swift) ou Android (Kotlin), distribuée via stores — performances optimales mais coût x2</li>
+          <li><strong>Application hybride (React Native, Flutter) :</strong> un seul code pour iOS et Android — bon compromis coût/performance pour les startups</li>
+          <li><strong>PWA (Progressive Web App) :</strong> site web avec comportement d'app mobile — installable, hors-ligne, sans passer par les stores</li>
+        </ul>
+        <div class="callout info-tech">
+          <span class="callout-icon">💡</span>
+          <p><strong>Conseil startup :</strong> Commence toujours par le web. C'est plus rapide à développer, plus facile à itérer et tu évites les contraintes des stores Apple et Google dès le départ.</p>
+        </div>
+      </div>
+
+      <div id="quiz-anchor" class="content-section quiz-section">
+        <h2>🕹️ Quiz de validation</h2>
+        <p class="quiz-intro">5 questions pour valider ta compréhension du module. Tu dois obtenir 80% pour valider.</p>
+        <div id="quiz-container"></div>
+        <div id="quiz-result" class="quiz-result">
+          <div class="quiz-result-score"></div>
+          <h3 class="quiz-result-title"></h3>
+          <p class="quiz-result-desc"></p>
+          <div class="quiz-result-actions">
+            <button class="btn btn-ghost" onclick="retryQuiz()">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8a6 6 0 1010.5-4M2 4v4h4"/></svg>
+              Recommencer
+            </button>
+            <a href="../index.html" class="btn btn-primary-tech">Retour aux modules <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <aside class="module-sidebar">
+      <div class="sidebar-card">
+        <h4>Modules — Maquette</h4>
+        <ul class="sidebar-module-list">
+          <li><a href="mindmapping.html" data-module="mindmapping">🧠 Mindmapping <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="ux-ui.html" data-module="ux-ui">🎯 Notions UX/UI <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="fonctionnalite.html" data-module="fonctionnalite">🧱 Construire une fonctionnalité <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="figma.html" data-module="figma">🖌️ Figma <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="tests-utilisateurs.html" data-module="tests-utilisateurs">🧪 Tests utilisateurs <span class="done-check" style="display:none">✓</span></a></li>
+        </ul>
+      </div>
+      <div class="sidebar-card">
+        <h4>Modules — Technologies</h4>
+        <ul class="sidebar-module-list">
+          <li><a href="piloter-it.html" data-module="piloter-it">🧭 Piloter un projet IT <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="onboarder-cto.html" data-module="onboarder-cto">🧑‍💻 Onboarder un CTO <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="cahier-des-charges.html" data-module="cahier-des-charges">📝 Cahier des charges <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="business-model.html" data-module="business-model">💼 Business Model <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="intro-ia.html" data-module="intro-ia">🤖 Intro IA <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="panorama-tech.html" class="active" data-module="panorama-tech">🗺️ Panorama des techno <span class="done-check" style="display:none">✓</span></a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <img src="../logo.svg" alt="Quest for Change" class="footer-logo-img" />
+      <p class="footer-text">Programme d'accompagnement numérique</p>
+    </div>
+  </footer>
+
+  <script src="../js/quiz.js"></script>
+  <script>
+    const questions = [
+      {
+        question: "Qu'est-ce que le 'frontend' d'une application web ?",
+        options: [
+          "La base de données de l'application",
+          "La partie visible et interactive avec laquelle l'utilisateur interagit directement",
+          "Le serveur qui héberge l'application",
+          "L'API qui connecte les différents services"
+        ],
+        correct: 1
+      },
+      {
+        question: "Quelle est la différence entre une application native et une application web ?",
+        options: [
+          "Les applications natives sont gratuites, les applications web sont payantes",
+          "Les applications natives sont développées pour un OS spécifique et installées, les web apps fonctionnent dans un navigateur",
+          "Les applications natives nécessitent une connexion internet permanente",
+          "Il n'y a aucune différence de performance entre les deux"
+        ],
+        correct: 1
+      },
+      {
+        question: "Qu'est-ce qu'une API ?",
+        options: [
+          "Un langage de programmation pour les applications mobiles",
+          "Un type de base de données relationnelle",
+          "Une interface permettant à deux applications de communiquer et d'échanger des données",
+          "Un outil de design d'interface utilisateur"
+        ],
+        correct: 2
+      },
+      {
+        question: "Qu'est-ce que le cloud computing ?",
+        options: [
+          "Un logiciel de prévision météorologique",
+          "L'utilisation de serveurs distants accessibles via internet pour stocker et traiter des données",
+          "Un type de réseau local d'entreprise",
+          "Un protocole de sécurité informatique"
+        ],
+        correct: 1
+      },
+      {
+        question: "Qu'est-ce que le no-code / low-code ?",
+        options: [
+          "Une pratique de développement sans commentaires dans le code",
+          "Des outils permettant de créer des applications avec peu ou pas de programmation",
+          "Un langage de programmation simplifié pour débutants",
+          "Une méthode pour réduire la taille des fichiers de code"
+        ],
+        correct: 1
+      }
+    ];
+    const quizInstance = new Quiz('panorama-tech', questions, 'tech');
+  </script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Business Model Numérique — Culturation</title>
+  <link rel="icon" href="../favicon.png" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-back">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 8H3M7 4l-4 4 4 4"/></svg>
+        Tous les modules
+      </a>
+      <img src="../logo.svg" alt="Quest for Change" class="nav-logo-img nav-logo-dark" />
+    </div>
+  </nav>
+
+  <header class="module-hero tech">
+    <div class="module-hero-inner">
+      <div class="module-section-tag tech">🖥️ Technologies</div>
+      <h1>💼 Business Model Numérique</h1>
+      <p class="module-hero-desc">Comprendre comment un produit numérique se monétise et s'inscrit dans un modèle économique cohérent.</p>
+    </div>
+  </header>
+
+  <div id="completed-banner" style="display:none; background: #D1FAE5; border-bottom: 1px solid #A7F3D0; padding: 12px 24px; align-items: center; gap: 12px;">
+    <span style="font-size:18px">✅</span>
+    <span style="font-size:14px; font-weight:600; color: #059669;">Module complété — Score : <span class="banner-score"></span></span>
+    <button onclick="scrollToQuiz()" style="margin-left:auto; font-size:13px; background:none; border:1px solid #059669; color:#059669; padding:4px 12px; border-radius:6px; cursor:pointer; font-family:inherit;">Retenter le quiz</button>
+  </div>
+
+  <div class="module-main">
+    <div class="module-content">
+
+      <div class="content-section">
+        <h2>Le business model, un choix structurant</h2>
+        <p>Le business model d'un produit numérique n'est pas un détail — c'est une décision qui influence l'architecture technique, l'expérience utilisateur et la stratégie de croissance. Choisir entre un modèle freemium, SaaS ou marketplace ne se fait pas au hasard : ça dépend de qui crée de la valeur, pour qui, et comment capturer une partie de cette valeur.</p>
+        <div class="callout info-tech">
+          <span class="callout-icon">💡</span>
+          <p><strong>À retenir :</strong> Le meilleur business model est celui qui est aligné avec le comportement naturel de tes utilisateurs. Si tu dois forcer l'adoption d'un modèle de paiement, c'est souvent le signe que quelque chose ne colle pas.</p>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>Les modèles principaux</h2>
+        <div class="concepts-grid">
+          <div class="concept-card">
+            <div class="concept-card-icon">🆓</div>
+            <h4>Freemium</h4>
+            <p>Version gratuite + version payante avec fonctionnalités avancées. Nécessite un fort volume d'utilisateurs pour un taux de conversion même faible.</p>
+          </div>
+          <div class="concept-card">
+            <div class="concept-card-icon">🔄</div>
+            <h4>SaaS (abonnement)</h4>
+            <p>Accès au logiciel via abonnement récurrent (mensuel/annuel). Revenus prévisibles, rétention critique. Idéal pour les outils B2B.</p>
+          </div>
+          <div class="concept-card">
+            <div class="concept-card-icon">🏪</div>
+            <h4>Marketplace</h4>
+            <p>Mise en relation acheteurs/vendeurs avec prise de commission. Effet réseau puissant mais bootstrapping difficile (problème de l'œuf et de la poule).</p>
+          </div>
+          <div class="concept-card">
+            <div class="concept-card-icon">📣</div>
+            <h4>Publicité / Data</h4>
+            <p>Gratuit pour l'utilisateur, monétisé via publicité ou données. Nécessite une audience massive. Tension avec l'expérience utilisateur.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>Les métriques clés à piloter</h2>
+        <ul class="key-points">
+          <li><strong>LTV (Lifetime Value) :</strong> revenu total généré par un client sur toute la durée de la relation</li>
+          <li><strong>CAC (Customer Acquisition Cost) :</strong> coût moyen pour acquérir un nouveau client</li>
+          <li><strong>Ratio LTV/CAC :</strong> doit idéalement être supérieur à 3 pour un modèle sain</li>
+          <li><strong>Churn rate :</strong> taux de désabonnement mensuel — le principal ennemi du SaaS</li>
+          <li><strong>MRR/ARR :</strong> revenus récurrents mensuels/annuels — l'indicateur roi du SaaS</li>
+        </ul>
+      </div>
+
+      <div id="quiz-anchor" class="content-section quiz-section">
+        <h2>🕹️ Quiz de validation</h2>
+        <p class="quiz-intro">5 questions pour valider ta compréhension du module. Tu dois obtenir 80% pour valider.</p>
+        <div id="quiz-container"></div>
+        <div id="quiz-result" class="quiz-result">
+          <div class="quiz-result-score"></div>
+          <h3 class="quiz-result-title"></h3>
+          <p class="quiz-result-desc"></p>
+          <div class="quiz-result-actions">
+            <button class="btn btn-ghost" onclick="retryQuiz()">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8a6 6 0 1010.5-4M2 4v4h4"/></svg>
+              Recommencer
+            </button>
+            <a href="../index.html" class="btn btn-primary-tech">Retour aux modules <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <aside class="module-sidebar">
+      <div class="sidebar-card">
+        <h4>Modules — Maquette</h4>
+        <ul class="sidebar-module-list">
+          <li><a href="mindmapping.html" data-module="mindmapping">🧠 Mindmapping <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="ux-ui.html" data-module="ux-ui">🎯 Notions UX/UI <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="fonctionnalite.html" data-module="fonctionnalite">🧱 Construire une fonctionnalité <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="figma.html" data-module="figma">🖌️ Figma <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="tests-utilisateurs.html" data-module="tests-utilisateurs">🧪 Tests utilisateurs <span class="done-check" style="display:none">✓</span></a></li>
+        </ul>
+      </div>
+      <div class="sidebar-card">
+        <h4>Modules — Technologies</h4>
+        <ul class="sidebar-module-list">
+          <li><a href="piloter-it.html" data-module="piloter-it">🧭 Piloter un projet IT <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="onboarder-cto.html" data-module="onboarder-cto">🧑‍💻 Onboarder un CTO <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="cahier-des-charges.html" data-module="cahier-des-charges">📝 Cahier des charges <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="business-model.html" class="active" data-module="business-model">💼 Business Model <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="intro-ia.html" data-module="intro-ia">🤖 Intro IA <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="panorama-tech.html" data-module="panorama-tech">🗺️ Panorama des techno <span class="done-check" style="display:none">✓</span></a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <img src="../logo.svg" alt="Quest for Change" class="footer-logo-img" />
+      <p class="footer-text">Programme d'accompagnement numérique</p>
+    </div>
+  </footer>
+
+  <script src="../js/quiz.js"></script>
+  <script>
+    const questions = [
+      {
+        question: "Qu'est-ce qu'un modèle freemium ?",
+        options: [
+          "Un produit entièrement gratuit financé par des dons",
+          "Une version gratuite avec fonctionnalités limitées et une version payante avancée",
+          "Un abonnement mensuel sans engagement ni limite",
+          "Un produit vendu uniquement en ligne à prix fixe"
+        ],
+        correct: 1
+      },
+      {
+        question: "Qu'est-ce que le LTV (Lifetime Value) d'un client ?",
+        options: [
+          "La durée de vie estimée du produit sur le marché",
+          "Le revenu total généré par un client sur toute la durée de sa relation avec l'entreprise",
+          "Le coût de développement d'une fonctionnalité clé",
+          "Le nombre de connexions hebdomadaires d'un utilisateur"
+        ],
+        correct: 1
+      },
+      {
+        question: "Pourquoi le ratio LTV/CAC est-il un indicateur central ?",
+        options: [
+          "Il mesure la vitesse de chargement du produit",
+          "Il indique si le coût d'acquisition d'un client est rentable au regard des revenus générés",
+          "Il calcule le nombre d'employés nécessaires à l'équipe",
+          "Il détermine le prix de vente optimal du produit"
+        ],
+        correct: 1
+      },
+      {
+        question: "Qu'est-ce qu'un modèle marketplace ?",
+        options: [
+          "Un site e-commerce vendant ses propres produits physiques",
+          "Une plateforme mettant en relation acheteurs et vendeurs en prenant une commission",
+          "Un réseau social professionnel à abonnement",
+          "Un outil SaaS de gestion de stock pour PME"
+        ],
+        correct: 1
+      },
+      {
+        question: "Dans quel cas le modèle SaaS est-il le plus pertinent ?",
+        options: [
+          "Pour un produit physique vendu en boutique",
+          "Pour un logiciel vendu en licence perpétuelle unique",
+          "Pour un logiciel accessible via abonnement récurrent, mis à jour en continu",
+          "Pour une application mobile gratuite financée par la publicité"
+        ],
+        correct: 2
+      }
+    ];
+    const quizInstance = new Quiz('business-model', questions, 'tech');
+  </script>
+</body>
+</html>

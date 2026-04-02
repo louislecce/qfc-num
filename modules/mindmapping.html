@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mindmapping — Culturation</title>
+  <link rel="icon" href="../favicon.png" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-back">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 8H3M7 4l-4 4 4 4"/></svg>
+        Tous les modules
+      </a>
+      <img src="../logo.svg" alt="Quest for Change" class="nav-logo-img nav-logo-dark" />
+    </div>
+  </nav>
+
+  <header class="module-hero maquette">
+    <div class="module-hero-inner">
+      <div class="module-section-tag maquette">🎨 Maquette</div>
+      <h1>🧠 Mindmapping</h1>
+      <p class="module-hero-desc">Explorer le problème, les usages et les fonctionnalités avant de passer à la solution.</p>
+    </div>
+  </header>
+
+  <!-- Completed banner -->
+  <div id="completed-banner" style="display:none; background: #D1FAE5; border-bottom: 1px solid #A7F3D0; padding: 12px 24px; align-items: center; gap: 12px;">
+    <span style="font-size:18px">✅</span>
+    <span style="font-size:14px; font-weight:600; color: #059669;">Module complété — Score : <span class="banner-score"></span></span>
+    <button onclick="scrollToQuiz()" style="margin-left:auto; font-size:13px; background:none; border:1px solid #059669; color:#059669; padding:4px 12px; border-radius:6px; cursor:pointer; font-family:inherit;">Retenter le quiz</button>
+  </div>
+
+  <div class="module-main">
+    <div class="module-content">
+
+      <div class="content-section">
+        <h2>Qu'est-ce que le mindmapping ?</h2>
+        <p>Le mindmapping (ou carte mentale) est une technique de représentation visuelle de l'information. Elle part d'un concept central et se développe en branches associées, permettant d'explorer librement un sujet dans toutes ses dimensions.</p>
+        <p>Dans le cadre d'un projet numérique, la mindmap est utilisée en phase de découverte et de cadrage — avant même de penser à la solution. Elle permet de cartographier les problèmes, les usages, les utilisateurs, les contraintes et les opportunités.</p>
+        <div class="callout info">
+          <span class="callout-icon">💡</span>
+          <p><strong>Principe clé :</strong> La mindmap n'est pas un outil de présentation. C'est un outil de pensée. Elle doit être créée en mode "brainstorming libre", sans jugement ni hiérarchisation préalable.</p>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>Concepts clés</h2>
+        <div class="concepts-grid">
+          <div class="concept-card">
+            <div class="concept-card-icon">🎯</div>
+            <h4>Le nœud central</h4>
+            <p>Le concept, problème ou question de départ. Tout part de là. Il doit être le plus précis et concret possible.</p>
+          </div>
+          <div class="concept-card">
+            <div class="concept-card-icon">🌿</div>
+            <h4>Les branches</h4>
+            <p>Chaque branche représente un thème ou une dimension dérivée du nœud central. Les sous-branches approfondissent chaque thème.</p>
+          </div>
+          <div class="concept-card">
+            <div class="concept-card-icon">🔗</div>
+            <h4>Les associations</h4>
+            <p>Des liens peuvent relier des idées de branches différentes — révélant des connexions inattendues.</p>
+          </div>
+          <div class="concept-card">
+            <div class="concept-card-icon">🎨</div>
+            <h4>La représentation visuelle</h4>
+            <p>Couleurs, icônes, épaisseur des branches : le visuel renforce la mémorisation et la hiérarchie.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>Comment l'utiliser dans ton projet ?</h2>
+        <p>Voici les moments où le mindmapping est particulièrement utile dans une démarche startup :</p>
+        <ul class="key-points">
+          <li>En début de projet, pour explorer le problème sous toutes ses facettes avant de définir une solution</li>
+          <li>Pour identifier les différents types d'utilisateurs et leurs besoins spécifiques</li>
+          <li>Lors d'une séance de brainstorming fonctionnel, pour lister les fonctionnalités possibles sans les prioriser</li>
+          <li>Pour préparer un atelier de co-conception avec des parties prenantes</li>
+          <li>Pour structurer une présentation ou un argumentaire complexe</li>
+        </ul>
+        <div class="callout info">
+          <span class="callout-icon">🛠️</span>
+          <p><strong>Outils recommandés :</strong> Miro, FigJam, Whimsical, Mindmeister — ou tout simplement une feuille A3 et des feutres de couleur.</p>
+        </div>
+      </div>
+
+      <!-- QUIZ -->
+      <div id="quiz-anchor" class="content-section quiz-section">
+        <h2>🕹️ Quiz de validation</h2>
+        <p class="quiz-intro">5 questions pour valider ta compréhension du module. Tu dois obtenir 80% pour valider.</p>
+        <div id="quiz-container"></div>
+        <div id="quiz-result" class="quiz-result">
+          <div class="quiz-result-score"></div>
+          <h3 class="quiz-result-title"></h3>
+          <p class="quiz-result-desc"></p>
+          <div class="quiz-result-actions">
+            <button class="btn btn-ghost" onclick="retryQuiz()">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8a6 6 0 1010.5-4M2 4v4h4"/></svg>
+              Recommencer
+            </button>
+            <a href="../index.html" class="btn btn-primary-maquette">
+              Retour aux modules
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SIDEBAR -->
+    <aside class="module-sidebar">
+      <div class="sidebar-card">
+        <h4>Modules — Maquette</h4>
+        <ul class="sidebar-module-list">
+          <li><a href="mindmapping.html" class="active" data-module="mindmapping">🧠 Mindmapping <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="ux-ui.html" data-module="ux-ui">🎯 Notions UX/UI <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="fonctionnalite.html" data-module="fonctionnalite">🧱 Construire une fonctionnalité <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="figma.html" data-module="figma">🖌️ Figma <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="tests-utilisateurs.html" data-module="tests-utilisateurs">🧪 Tests utilisateurs <span class="done-check" style="display:none">✓</span></a></li>
+        </ul>
+      </div>
+      <div class="sidebar-card">
+        <h4>Modules — Technologies</h4>
+        <ul class="sidebar-module-list">
+          <li><a href="piloter-it.html" data-module="piloter-it">🧭 Piloter un projet IT <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="onboarder-cto.html" data-module="onboarder-cto">🧑‍💻 Onboarder un CTO <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="cahier-des-charges.html" data-module="cahier-des-charges">📝 Cahier des charges <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="business-model.html" data-module="business-model">💼 Business Model <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="intro-ia.html" data-module="intro-ia">🤖 Intro IA <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="panorama-tech.html" data-module="panorama-tech">🗺️ Panorama des techno <span class="done-check" style="display:none">✓</span></a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <img src="../logo.svg" alt="Quest for Change" class="footer-logo-img" />
+      <p class="footer-text">Programme d'accompagnement numérique</p>
+    </div>
+  </footer>
+
+  <script src="../js/quiz.js"></script>
+  <script>
+    const questions = [
+      {
+        question: "Quel est le principal avantage du mindmapping en phase de découverte produit ?",
+        options: [
+          "Rédiger le cahier des charges final",
+          "Explorer visuellement les liens entre idées, usages et fonctionnalités",
+          "Créer les wireframes de l'application",
+          "Calculer le budget du projet"
+        ],
+        correct: 1
+      },
+      {
+        question: "Où place-t-on le concept central dans une mindmap ?",
+        options: [
+          "En haut à gauche de la page",
+          "En bas, pour laisser de la place",
+          "Au centre, comme point de départ de toutes les branches",
+          "Dans une colonne à droite"
+        ],
+        correct: 2
+      },
+      {
+        question: "Quelle est la bonne pratique lors de la création d'une mindmap ?",
+        options: [
+          "Hiérarchiser les idées avant de les noter",
+          "Se limiter à 3 branches maximum",
+          "Laisser libre cours aux associations d'idées sans jugement dans un premier temps",
+          "Commencer par les sous-branches les plus détaillées"
+        ],
+        correct: 2
+      },
+      {
+        question: "Dans quel cas le mindmapping est-il particulièrement utile ?",
+        options: [
+          "Pour rédiger un contrat avec un prestataire",
+          "Pour structurer une présentation comptable",
+          "Pour clarifier un problème complexe avec de nombreuses dimensions",
+          "Pour écrire le code d'une fonctionnalité"
+        ],
+        correct: 2
+      },
+      {
+        question: "Qu'est-ce qu'une branche dans une mindmap représente ?",
+        options: [
+          "Une étape du planning projet avec une date",
+          "Un thème ou une idée dérivée du concept central",
+          "Un utilisateur de l'application",
+          "Un composant technique du système"
+        ],
+        correct: 1
+      }
+    ];
+    const quizInstance = new Quiz('mindmapping', questions, 'maquette');
+  </script>
+</body>
+</html>

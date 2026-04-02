@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Onboarder un CTO — Culturation</title>
+  <link rel="icon" href="../favicon.png" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-back">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 8H3M7 4l-4 4 4 4"/></svg>
+        Tous les modules
+      </a>
+      <img src="../logo.svg" alt="Quest for Change" class="nav-logo-img nav-logo-dark" />
+    </div>
+  </nav>
+
+  <header class="module-hero tech">
+    <div class="module-hero-inner">
+      <div class="module-section-tag tech">🖥️ Technologies</div>
+      <h1>🧑‍💻 Onboarder un CTO</h1>
+      <p class="module-hero-desc">Poser un cadre clair (vision, attentes, contraintes) pour aligner rapidement un CTO ou une équipe technique.</p>
+    </div>
+  </header>
+
+  <div id="completed-banner" style="display:none; background: #D1FAE5; border-bottom: 1px solid #A7F3D0; padding: 12px 24px; align-items: center; gap: 12px;">
+    <span style="font-size:18px">✅</span>
+    <span style="font-size:14px; font-weight:600; color: #059669;">Module complété — Score : <span class="banner-score"></span></span>
+    <button onclick="scrollToQuiz()" style="margin-left:auto; font-size:13px; background:none; border:1px solid #059669; color:#059669; padding:4px 12px; border-radius:6px; cursor:pointer; font-family:inherit;">Retenter le quiz</button>
+  </div>
+
+  <div class="module-main">
+    <div class="module-content">
+
+      <div class="content-section">
+        <h2>Pourquoi l'onboarding d'un CTO est critique ?</h2>
+        <p>Recruter un CTO ou un lead technique est souvent le recrutement le plus important d'une startup tech. Un mauvais onboarding peut coûter des mois : mauvais choix d'architecture, désalignement sur les priorités, perte de confiance mutuelle.</p>
+        <p>L'onboarding ne commence pas le jour J — il se prépare. Avant même l'arrivée du CTO, le fondateur doit être capable d'articuler clairement la vision produit, les contraintes connues et les décisions déjà prises.</p>
+        <div class="callout info-tech">
+          <span class="callout-icon">🤝</span>
+          <p><strong>Principe clé :</strong> Un bon CTO ne veut pas juste des accès GitHub — il veut comprendre le "pourquoi" avant le "comment". Ta première mission est de lui donner le contexte complet, pas de lui lister des tâches.</p>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>Ce qu'un CTO doit comprendre dès le départ</h2>
+        <div class="concepts-grid">
+          <div class="concept-card">
+            <div class="concept-card-icon">🎯</div>
+            <h4>Vision produit</h4>
+            <p>Où va le produit dans 18 mois ? Quel problème central résout-il ? Quelle est la stratégie de différenciation ?</p>
+          </div>
+          <div class="concept-card">
+            <div class="concept-card-icon">⚠️</div>
+            <h4>Dette technique</h4>
+            <p>Les raccourcis pris jusqu'ici. Pas de honte — il faut juste être transparent pour éviter les mauvaises surprises.</p>
+          </div>
+          <div class="concept-card">
+            <div class="concept-card-icon">🗺️</div>
+            <h4>Roadmap & contraintes</h4>
+            <p>Les fonctionnalités prévues, les délais imposés (levée de fonds, contractuels), les contraintes budget et équipe.</p>
+          </div>
+          <div class="concept-card">
+            <div class="concept-card-icon">⚖️</div>
+            <h4>Decision rights</h4>
+            <p>Qui décide de quoi entre CEO et CTO ? Architecture, stack, recrutement tech — clarifier évite les conflits.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>Les 30 premiers jours</h2>
+        <ul class="key-points">
+          <li>Semaine 1 : écoute et découverte — laisser le CTO auditer le code et l'infra sans pression de livraison</li>
+          <li>Semaine 2 : partager la roadmap et co-construire les priorités techniques des 3 prochains mois</li>
+          <li>Semaine 3 : premier sprint ensemble, rituels définis (stand-up, retrospective)</li>
+          <li>Semaine 4 : bilan de compréhension mutuelle — aligner sur les ambitions et les contraintes réelles</li>
+          <li>Tout au long : points 1-on-1 réguliers pour détecter les incompréhensions avant qu'elles deviennent des conflits</li>
+        </ul>
+      </div>
+
+      <div id="quiz-anchor" class="content-section quiz-section">
+        <h2>🕹️ Quiz de validation</h2>
+        <p class="quiz-intro">5 questions pour valider ta compréhension du module. Tu dois obtenir 80% pour valider.</p>
+        <div id="quiz-container"></div>
+        <div id="quiz-result" class="quiz-result">
+          <div class="quiz-result-score"></div>
+          <h3 class="quiz-result-title"></h3>
+          <p class="quiz-result-desc"></p>
+          <div class="quiz-result-actions">
+            <button class="btn btn-ghost" onclick="retryQuiz()">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8a6 6 0 1010.5-4M2 4v4h4"/></svg>
+              Recommencer
+            </button>
+            <a href="../index.html" class="btn btn-primary-tech">Retour aux modules <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <aside class="module-sidebar">
+      <div class="sidebar-card">
+        <h4>Modules — Maquette</h4>
+        <ul class="sidebar-module-list">
+          <li><a href="mindmapping.html" data-module="mindmapping">🧠 Mindmapping <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="ux-ui.html" data-module="ux-ui">🎯 Notions UX/UI <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="fonctionnalite.html" data-module="fonctionnalite">🧱 Construire une fonctionnalité <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="figma.html" data-module="figma">🖌️ Figma <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="tests-utilisateurs.html" data-module="tests-utilisateurs">🧪 Tests utilisateurs <span class="done-check" style="display:none">✓</span></a></li>
+        </ul>
+      </div>
+      <div class="sidebar-card">
+        <h4>Modules — Technologies</h4>
+        <ul class="sidebar-module-list">
+          <li><a href="piloter-it.html" data-module="piloter-it">🧭 Piloter un projet IT <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="onboarder-cto.html" class="active" data-module="onboarder-cto">🧑‍💻 Onboarder un CTO <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="cahier-des-charges.html" data-module="cahier-des-charges">📝 Cahier des charges <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="business-model.html" data-module="business-model">💼 Business Model <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="intro-ia.html" data-module="intro-ia">🤖 Intro IA <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="panorama-tech.html" data-module="panorama-tech">🗺️ Panorama des techno <span class="done-check" style="display:none">✓</span></a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <img src="../logo.svg" alt="Quest for Change" class="footer-logo-img" />
+      <p class="footer-text">Programme d'accompagnement numérique</p>
+    </div>
+  </footer>
+
+  <script src="../js/quiz.js"></script>
+  <script>
+    const questions = [
+      {
+        question: "Quelle est la première priorité pour bien onboarder un CTO ?",
+        options: [
+          "Lui donner accès à tous les outils techniques immédiatement",
+          "Partager une vision claire du produit, des enjeux business et des attentes",
+          "Le laisser auditer tout le code existant sans contexte",
+          "Organiser une série de réunions avec tous les clients"
+        ],
+        correct: 1
+      },
+      {
+        question: "Qu'est-ce que la 'dette technique' que le CTO doit comprendre ?",
+        options: [
+          "La facture des serveurs cloud du mois",
+          "L'ensemble des raccourcis techniques pris qui devront être corrigés ultérieurement",
+          "Le budget alloué à la R&D pour l'année",
+          "Les salaires de l'équipe technique"
+        ],
+        correct: 1
+      },
+      {
+        question: "Pourquoi définir des 'decision rights' pour le CTO ?",
+        options: [
+          "Pour limiter les dépenses informatiques",
+          "Pour clarifier qui décide de quoi entre le CTO, le CEO et les autres parties prenantes",
+          "Pour respecter des obligations légales",
+          "Pour définir les horaires de travail de l'équipe technique"
+        ],
+        correct: 1
+      },
+      {
+        question: "Quel document est essentiel à partager lors de l'onboarding d'un CTO ?",
+        options: [
+          "Le bilan comptable des 3 dernières années",
+          "La liste des clients insatisfaits",
+          "La roadmap produit, l'architecture technique actuelle et les contraintes connues",
+          "Les contrats de travail de tous les employés"
+        ],
+        correct: 2
+      },
+      {
+        question: "Comment s'assurer que le CTO est bien aligné après ses premières semaines ?",
+        options: [
+          "En lui demandant de livrer une fonctionnalité majeure dès le premier mois",
+          "En organisant des points réguliers pour valider la compréhension mutuelle des priorités",
+          "En limitant ses accès techniques jusqu'à la fin de la période d'essai",
+          "En lui confiant immédiatement la totalité du budget tech"
+        ],
+        correct: 1
+      }
+    ];
+    const quizInstance = new Quiz('onboarder-cto', questions, 'tech');
+  </script>
+</body>
+</html>

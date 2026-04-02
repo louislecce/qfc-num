@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cahier des charges — Culturation</title>
+  <link rel="icon" href="../favicon.png" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-back">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 8H3M7 4l-4 4 4 4"/></svg>
+        Tous les modules
+      </a>
+      <img src="../logo.svg" alt="Quest for Change" class="nav-logo-img nav-logo-dark" />
+    </div>
+  </nav>
+
+  <header class="module-hero tech">
+    <div class="module-hero-inner">
+      <div class="module-section-tag tech">🖥️ Technologies</div>
+      <h1>📝 Cahier des charges</h1>
+      <p class="module-hero-desc">Formaliser le besoin, le périmètre et les priorités sans figer prématurément la solution.</p>
+    </div>
+  </header>
+
+  <div id="completed-banner" style="display:none; background: #D1FAE5; border-bottom: 1px solid #A7F3D0; padding: 12px 24px; align-items: center; gap: 12px;">
+    <span style="font-size:18px">✅</span>
+    <span style="font-size:14px; font-weight:600; color: #059669;">Module complété — Score : <span class="banner-score"></span></span>
+    <button onclick="scrollToQuiz()" style="margin-left:auto; font-size:13px; background:none; border:1px solid #059669; color:#059669; padding:4px 12px; border-radius:6px; cursor:pointer; font-family:inherit;">Retenter le quiz</button>
+  </div>
+
+  <div class="module-main">
+    <div class="module-content">
+
+      <div class="content-section">
+        <h2>À quoi sert vraiment un cahier des charges ?</h2>
+        <p>Le cahier des charges (CDC) est un document d'alignement, pas un document de contrôle. Son objectif premier est de s'assurer que toutes les parties prenantes — fondateurs, équipe tech, prestataires — partagent la même compréhension du besoin, du périmètre et des priorités.</p>
+        <p>L'erreur classique : rédiger un CDC ultra-détaillé qui fige la solution avant d'avoir appris quoi que ce soit. Dans un contexte startup, le CDC doit cadrer sans contraindre — il doit permettre l'adaptation.</p>
+        <div class="callout info-tech">
+          <span class="callout-icon">📌</span>
+          <p><strong>Distinction clé :</strong> Décrivez le <em>problème</em> et les <em>besoins</em>, pas la <em>solution technique</em>. "Les utilisateurs doivent pouvoir rechercher un prestataire par zone géographique" — pas "Implémenter une API Google Maps avec un rayon de 50km".</p>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>Les sections indispensables</h2>
+        <div class="concepts-grid">
+          <div class="concept-card">
+            <div class="concept-card-icon">🎯</div>
+            <h4>Contexte & objectifs</h4>
+            <p>Qui est l'utilisateur cible ? Quel problème résout-on ? Quels sont les critères de succès mesurables ?</p>
+          </div>
+          <div class="concept-card">
+            <div class="concept-card-icon">📐</div>
+            <h4>Périmètre fonctionnel</h4>
+            <p>Ce qui est IN et ce qui est OUT. Être explicite sur les exclusions évite les malentendus coûteux.</p>
+          </div>
+          <div class="concept-card">
+            <div class="concept-card-icon">⚙️</div>
+            <h4>Contraintes techniques</h4>
+            <p>Stack imposée, intégrations existantes, contraintes de sécurité, RGPD, performances requises.</p>
+          </div>
+          <div class="concept-card">
+            <div class="concept-card-icon">🏆</div>
+            <h4>Priorisation MoSCoW</h4>
+            <p>Must Have / Should Have / Could Have / Won't Have. Clarifier ce qui est non-négociable vs souhaitable.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>Bonnes pratiques de rédaction</h2>
+        <ul class="key-points">
+          <li>Rédiger en langage fonctionnel, accessible à des non-techniques et des non-métiers à la fois</li>
+          <li>Inclure des exemples concrets et des cas d'usage pour illustrer chaque besoin</li>
+          <li>Versionner le document et noter les décisions importantes avec leur justification</li>
+          <li>Faire valider le CDC par l'équipe tech avant de le considérer comme finalisé</li>
+          <li>Prévoir une section "questions ouvertes" pour les points encore en discussion</li>
+        </ul>
+      </div>
+
+      <div id="quiz-anchor" class="content-section quiz-section">
+        <h2>🕹️ Quiz de validation</h2>
+        <p class="quiz-intro">5 questions pour valider ta compréhension du module. Tu dois obtenir 80% pour valider.</p>
+        <div id="quiz-container"></div>
+        <div id="quiz-result" class="quiz-result">
+          <div class="quiz-result-score"></div>
+          <h3 class="quiz-result-title"></h3>
+          <p class="quiz-result-desc"></p>
+          <div class="quiz-result-actions">
+            <button class="btn btn-ghost" onclick="retryQuiz()">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8a6 6 0 1010.5-4M2 4v4h4"/></svg>
+              Recommencer
+            </button>
+            <a href="../index.html" class="btn btn-primary-tech">Retour aux modules <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <aside class="module-sidebar">
+      <div class="sidebar-card">
+        <h4>Modules — Maquette</h4>
+        <ul class="sidebar-module-list">
+          <li><a href="mindmapping.html" data-module="mindmapping">🧠 Mindmapping <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="ux-ui.html" data-module="ux-ui">🎯 Notions UX/UI <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="fonctionnalite.html" data-module="fonctionnalite">🧱 Construire une fonctionnalité <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="figma.html" data-module="figma">🖌️ Figma <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="tests-utilisateurs.html" data-module="tests-utilisateurs">🧪 Tests utilisateurs <span class="done-check" style="display:none">✓</span></a></li>
+        </ul>
+      </div>
+      <div class="sidebar-card">
+        <h4>Modules — Technologies</h4>
+        <ul class="sidebar-module-list">
+          <li><a href="piloter-it.html" data-module="piloter-it">🧭 Piloter un projet IT <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="onboarder-cto.html" data-module="onboarder-cto">🧑‍💻 Onboarder un CTO <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="cahier-des-charges.html" class="active" data-module="cahier-des-charges">📝 Cahier des charges <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="business-model.html" data-module="business-model">💼 Business Model <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="intro-ia.html" data-module="intro-ia">🤖 Intro IA <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="panorama-tech.html" data-module="panorama-tech">🗺️ Panorama des techno <span class="done-check" style="display:none">✓</span></a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <img src="../logo.svg" alt="Quest for Change" class="footer-logo-img" />
+      <p class="footer-text">Programme d'accompagnement numérique</p>
+    </div>
+  </footer>
+
+  <script src="../js/quiz.js"></script>
+  <script>
+    const questions = [
+      {
+        question: "Quel est l'objectif principal d'un cahier des charges ?",
+        options: [
+          "Détailler précisément toutes les lignes de code à développer",
+          "Formaliser le besoin et le périmètre pour aligner toutes les parties prenantes",
+          "Servir de contrat légal opposable avec les développeurs",
+          "Remplacer les réunions de suivi de projet"
+        ],
+        correct: 1
+      },
+      {
+        question: "Qu'est-ce que le 'périmètre fonctionnel' dans un cahier des charges ?",
+        options: [
+          "La taille physique de l'application en Mo",
+          "L'ensemble des fonctionnalités incluses ET exclues du projet",
+          "Le nombre de pages du document de spécifications",
+          "Le budget maximum autorisé pour le projet"
+        ],
+        correct: 1
+      },
+      {
+        question: "Pourquoi faut-il éviter de 'figer la solution' trop tôt dans un cahier des charges ?",
+        options: [
+          "Pour que les développeurs choisissent librement leur technologie",
+          "Pour réduire le temps de rédaction du document",
+          "Pour garder la flexibilité d'adapter la solution aux apprentissages et retours",
+          "Car c'est une obligation réglementaire"
+        ],
+        correct: 2
+      },
+      {
+        question: "Quelle section est indispensable dans un cahier des charges produit ?",
+        options: [
+          "La biographie détaillée de l'équipe fondatrice",
+          "Les contraintes techniques et fonctionnelles ainsi que les critères de succès",
+          "La liste complète des concurrents internationaux",
+          "Le plan de communication marketing sur 12 mois"
+        ],
+        correct: 1
+      },
+      {
+        question: "Comment la méthode MoSCoW aide-t-elle à prioriser dans un cahier des charges ?",
+        options: [
+          "Elle classe les fonctionnalités par ordre alphabétique",
+          "Elle organise les fonctionnalités par complexité technique croissante",
+          "Elle distingue Must Have, Should Have, Could Have et Won't Have",
+          "Elle définit les fonctionnalités selon les préférences du CEO"
+        ],
+        correct: 2
+      }
+    ];
+    const quizInstance = new Quiz('cahier-des-charges', questions, 'tech');
+  </script>
+</body>
+</html>

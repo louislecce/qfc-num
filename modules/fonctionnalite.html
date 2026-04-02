@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Construire une fonctionnalité — Culturation</title>
+  <link rel="icon" href="../favicon.png" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-back">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 8H3M7 4l-4 4 4 4"/></svg>
+        Tous les modules
+      </a>
+      <img src="../logo.svg" alt="Quest for Change" class="nav-logo-img nav-logo-dark" />
+    </div>
+  </nav>
+
+  <header class="module-hero maquette">
+    <div class="module-hero-inner">
+      <div class="module-section-tag maquette">🎨 Maquette</div>
+      <h1>🧱 Construire une fonctionnalité</h1>
+      <p class="module-hero-desc">Transformer un besoin utilisateur en fonctionnalités claires et testables.</p>
+    </div>
+  </header>
+
+  <div id="completed-banner" style="display:none; background: #D1FAE5; border-bottom: 1px solid #A7F3D0; padding: 12px 24px; align-items: center; gap: 12px;">
+    <span style="font-size:18px">✅</span>
+    <span style="font-size:14px; font-weight:600; color: #059669;">Module complété — Score : <span class="banner-score"></span></span>
+    <button onclick="scrollToQuiz()" style="margin-left:auto; font-size:13px; background:none; border:1px solid #059669; color:#059669; padding:4px 12px; border-radius:6px; cursor:pointer; font-family:inherit;">Retenter le quiz</button>
+  </div>
+
+  <div class="module-main">
+    <div class="module-content">
+
+      <div class="content-section">
+        <h2>Du besoin à la fonctionnalité</h2>
+        <p>Une fonctionnalité ne part jamais d'une idée technique — elle part d'un besoin utilisateur réel. Le piège classique est de construire ce qu'on imagine utile, plutôt que ce que les utilisateurs cherchent vraiment à accomplir.</p>
+        <p>L'outil central pour formaliser cela : la <strong>user story</strong>. C'est une phrase courte qui décrit un besoin du point de vue de l'utilisateur, sans présupposer la solution technique.</p>
+        <div class="callout info">
+          <span class="callout-icon">📝</span>
+          <p><strong>Structure d'une user story :</strong> "En tant que [type d'utilisateur], je veux [action] afin de [bénéfice attendu]."<br>Ex : "En tant que fondateur, je veux filtrer les contacts par secteur afin de préparer mes relances rapidement."</p>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>Concepts clés</h2>
+        <div class="concepts-grid">
+          <div class="concept-card">
+            <div class="concept-card-icon">📋</div>
+            <h4>User Story</h4>
+            <p>Description courte d'un besoin utilisateur. Ne décrit pas le "comment" mais le "pourquoi" et le "quoi".</p>
+          </div>
+          <div class="concept-card">
+            <div class="concept-card-icon">✅</div>
+            <h4>Critère d'acceptation</h4>
+            <p>Conditions précises qui définissent quand la fonctionnalité est considérée comme terminée et conforme.</p>
+          </div>
+          <div class="concept-card">
+            <div class="concept-card-icon">📊</div>
+            <h4>Backlog</h4>
+            <p>Liste priorisée de toutes les fonctionnalités à construire. Vivante et réordonnable selon la valeur et l'effort.</p>
+          </div>
+          <div class="concept-card">
+            <div class="concept-card-icon">🎯</div>
+            <h4>MVP de fonctionnalité</h4>
+            <p>La version la plus simple qui teste l'hypothèse clé. Évite de sur-construire avant de valider.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>Prioriser avec la matrice Valeur / Effort</h2>
+        <p>Toutes les fonctionnalités ne se valent pas. Avant de coder, positionne chaque user story dans une matrice simple :</p>
+        <ul class="key-points">
+          <li><strong>Forte valeur + faible effort</strong> → À faire en priorité (quick wins)</li>
+          <li><strong>Forte valeur + fort effort</strong> → À planifier soigneusement (projets structurants)</li>
+          <li><strong>Faible valeur + faible effort</strong> → À faire si le temps le permet</li>
+          <li><strong>Faible valeur + fort effort</strong> → À éviter ou reporter</li>
+        </ul>
+        <div class="callout info">
+          <span class="callout-icon">⚠️</span>
+          <p><strong>Règle d'or :</strong> Une fonctionnalité non validée par des utilisateurs réels n'est qu'une hypothèse. Lance le minimum, mesure, puis itère.</p>
+        </div>
+      </div>
+
+      <div id="quiz-anchor" class="content-section quiz-section">
+        <h2>🕹️ Quiz de validation</h2>
+        <p class="quiz-intro">5 questions pour valider ta compréhension du module. Tu dois obtenir 80% pour valider.</p>
+        <div id="quiz-container"></div>
+        <div id="quiz-result" class="quiz-result">
+          <div class="quiz-result-score"></div>
+          <h3 class="quiz-result-title"></h3>
+          <p class="quiz-result-desc"></p>
+          <div class="quiz-result-actions">
+            <button class="btn btn-ghost" onclick="retryQuiz()">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8a6 6 0 1010.5-4M2 4v4h4"/></svg>
+              Recommencer
+            </button>
+            <a href="../index.html" class="btn btn-primary-maquette">Retour aux modules <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <aside class="module-sidebar">
+      <div class="sidebar-card">
+        <h4>Modules — Maquette</h4>
+        <ul class="sidebar-module-list">
+          <li><a href="mindmapping.html" data-module="mindmapping">🧠 Mindmapping <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="ux-ui.html" data-module="ux-ui">🎯 Notions UX/UI <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="fonctionnalite.html" class="active" data-module="fonctionnalite">🧱 Construire une fonctionnalité <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="figma.html" data-module="figma">🖌️ Figma <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="tests-utilisateurs.html" data-module="tests-utilisateurs">🧪 Tests utilisateurs <span class="done-check" style="display:none">✓</span></a></li>
+        </ul>
+      </div>
+      <div class="sidebar-card">
+        <h4>Modules — Technologies</h4>
+        <ul class="sidebar-module-list">
+          <li><a href="piloter-it.html" data-module="piloter-it">🧭 Piloter un projet IT <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="onboarder-cto.html" data-module="onboarder-cto">🧑‍💻 Onboarder un CTO <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="cahier-des-charges.html" data-module="cahier-des-charges">📝 Cahier des charges <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="business-model.html" data-module="business-model">💼 Business Model <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="intro-ia.html" data-module="intro-ia">🤖 Intro IA <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="panorama-tech.html" data-module="panorama-tech">🗺️ Panorama des techno <span class="done-check" style="display:none">✓</span></a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <img src="../logo.svg" alt="Quest for Change" class="footer-logo-img" />
+      <p class="footer-text">Programme d'accompagnement numérique</p>
+    </div>
+  </footer>
+
+  <script src="../js/quiz.js"></script>
+  <script>
+    const questions = [
+      {
+        question: "Qu'est-ce qu'une 'user story' ?",
+        options: [
+          "Un document technique décrivant le code d'une fonctionnalité",
+          "Une description courte d'un besoin utilisateur de son point de vue",
+          "Un rapport de test utilisateur",
+          "Un diagramme de flux technique"
+        ],
+        correct: 1
+      },
+      {
+        question: "Quelle est la structure classique d'une user story ?",
+        options: [
+          "Si… Alors… Sinon…",
+          "En tant que… Je veux… Afin de…",
+          "Quand… Pourquoi… Comment…",
+          "Qui… Quoi… Où…"
+        ],
+        correct: 1
+      },
+      {
+        question: "Qu'est-ce que le 'critère d'acceptation' d'une fonctionnalité ?",
+        options: [
+          "Le nombre minimum d'utilisateurs pour lancer la fonctionnalité",
+          "Le budget alloué au développement",
+          "Les conditions précises qui définissent quand la fonctionnalité est terminée",
+          "L'avis des investisseurs sur la fonctionnalité"
+        ],
+        correct: 2
+      },
+      {
+        question: "Comment prioriser des fonctionnalités dans un backlog ?",
+        options: [
+          "Par ordre alphabétique",
+          "Par complexité technique croissante",
+          "En fonction de la valeur apportée et de l'effort de développement",
+          "Selon les préférences de l'équipe de design"
+        ],
+        correct: 2
+      },
+      {
+        question: "Que signifie le principe du MVP appliqué à une fonctionnalité ?",
+        options: [
+          "La version la plus complexe possible pour impressionner les investisseurs",
+          "La version la plus simple qui teste l'hypothèse clé et apporte de la valeur",
+          "Une fonctionnalité uniquement disponible pour les administrateurs",
+          "La dernière version stable déployée en production"
+        ],
+        correct: 1
+      }
+    ];
+    const quizInstance = new Quiz('fonctionnalite', questions, 'maquette');
+  </script>
+</body>
+</html>

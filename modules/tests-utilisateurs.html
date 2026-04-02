@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Organiser des tests utilisateurs — Culturation</title>
+  <link rel="icon" href="../favicon.png" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-back">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 8H3M7 4l-4 4 4 4"/></svg>
+        Tous les modules
+      </a>
+      <img src="../logo.svg" alt="Quest for Change" class="nav-logo-img nav-logo-dark" />
+    </div>
+  </nav>
+
+  <header class="module-hero maquette">
+    <div class="module-hero-inner">
+      <div class="module-section-tag maquette">🎨 Maquette</div>
+      <h1>🧪 Organiser des tests utilisateurs</h1>
+      <p class="module-hero-desc">Valider ou invalider des choix produit à partir de retours réels.</p>
+    </div>
+  </header>
+
+  <div id="completed-banner" style="display:none; background: #D1FAE5; border-bottom: 1px solid #A7F3D0; padding: 12px 24px; align-items: center; gap: 12px;">
+    <span style="font-size:18px">✅</span>
+    <span style="font-size:14px; font-weight:600; color: #059669;">Module complété — Score : <span class="banner-score"></span></span>
+    <button onclick="scrollToQuiz()" style="margin-left:auto; font-size:13px; background:none; border:1px solid #059669; color:#059669; padding:4px 12px; border-radius:6px; cursor:pointer; font-family:inherit;">Retenter le quiz</button>
+  </div>
+
+  <div class="module-main">
+    <div class="module-content">
+
+      <div class="content-section">
+        <h2>Pourquoi tester avec de vrais utilisateurs ?</h2>
+        <p>Le test utilisateur est la méthode la plus fiable pour sortir du biais du concepteur. Ce que tu trouves évident ne l'est souvent pas pour quelqu'un qui découvre ton produit. Observer de vraies personnes interagir avec ton interface révèle des problèmes invisibles en interne.</p>
+        <p>Un test utilisateur n'est pas une démonstration — c'est une session d'observation. L'objectif est de voir ce qui bloque, ce qui confond, ce qui satisfait… sans intervenir ni défendre tes choix.</p>
+        <div class="callout info">
+          <span class="callout-icon">🔬</span>
+          <p><strong>Règle des 5 utilisateurs :</strong> Selon les recherches de Nielsen Norman Group, 5 utilisateurs suffisent pour identifier ~85% des problèmes d'usabilité majeurs. Pas besoin de centaines de participants pour un test qualitatif.</p>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>Comment organiser un test</h2>
+        <div class="concepts-grid">
+          <div class="concept-card">
+            <div class="concept-card-icon">🎯</div>
+            <h4>1. Définir l'objectif</h4>
+            <p>Quelle hypothèse veux-tu valider ? Quelle tâche spécifique l'utilisateur doit-il accomplir ? Ne teste pas tout à la fois.</p>
+          </div>
+          <div class="concept-card">
+            <div class="concept-card-icon">👥</div>
+            <h4>2. Recruter les bons profils</h4>
+            <p>3 à 8 personnes représentant ton utilisateur cible. Évite amis et famille qui sont biaisés en ta faveur.</p>
+          </div>
+          <div class="concept-card">
+            <div class="concept-card-icon">🎙️</div>
+            <h4>3. Think Aloud</h4>
+            <p>Demande à l'utilisateur de verbaliser ses pensées en temps réel. "Dis-moi à quoi tu penses pendant que tu fais ça."</p>
+          </div>
+          <div class="concept-card">
+            <div class="concept-card-icon">📊</div>
+            <h4>4. Analyser les patterns</h4>
+            <p>Identifie les problèmes récurrents (≥ 3 utilisateurs). Priorise par impact sur le flux principal.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>La posture du bon facilitateur</h2>
+        <ul class="key-points">
+          <li>Observer sans intervenir — laisse l'utilisateur se débrouiller, même s'il bloque</li>
+          <li>Poser des questions ouvertes : "Qu'est-ce que tu t'attendais à voir ici ?" plutôt que "C'est clair ?"</li>
+          <li>Ne jamais défendre ou expliquer tes choix de design pendant la session</li>
+          <li>Prendre des notes sur les comportements, pas seulement les verbatims</li>
+          <li>Remercier l'utilisateur : ce n'est pas lui qui échoue, c'est le produit qui doit s'adapter</li>
+        </ul>
+      </div>
+
+      <div id="quiz-anchor" class="content-section quiz-section">
+        <h2>🕹️ Quiz de validation</h2>
+        <p class="quiz-intro">5 questions pour valider ta compréhension du module. Tu dois obtenir 80% pour valider.</p>
+        <div id="quiz-container"></div>
+        <div id="quiz-result" class="quiz-result">
+          <div class="quiz-result-score"></div>
+          <h3 class="quiz-result-title"></h3>
+          <p class="quiz-result-desc"></p>
+          <div class="quiz-result-actions">
+            <button class="btn btn-ghost" onclick="retryQuiz()">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8a6 6 0 1010.5-4M2 4v4h4"/></svg>
+              Recommencer
+            </button>
+            <a href="../index.html" class="btn btn-primary-maquette">Retour aux modules <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <aside class="module-sidebar">
+      <div class="sidebar-card">
+        <h4>Modules — Maquette</h4>
+        <ul class="sidebar-module-list">
+          <li><a href="mindmapping.html" data-module="mindmapping">🧠 Mindmapping <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="ux-ui.html" data-module="ux-ui">🎯 Notions UX/UI <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="fonctionnalite.html" data-module="fonctionnalite">🧱 Construire une fonctionnalité <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="figma.html" data-module="figma">🖌️ Figma <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="tests-utilisateurs.html" class="active" data-module="tests-utilisateurs">🧪 Tests utilisateurs <span class="done-check" style="display:none">✓</span></a></li>
+        </ul>
+      </div>
+      <div class="sidebar-card">
+        <h4>Modules — Technologies</h4>
+        <ul class="sidebar-module-list">
+          <li><a href="piloter-it.html" data-module="piloter-it">🧭 Piloter un projet IT <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="onboarder-cto.html" data-module="onboarder-cto">🧑‍💻 Onboarder un CTO <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="cahier-des-charges.html" data-module="cahier-des-charges">📝 Cahier des charges <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="business-model.html" data-module="business-model">💼 Business Model <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="intro-ia.html" data-module="intro-ia">🤖 Intro IA <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="panorama-tech.html" data-module="panorama-tech">🗺️ Panorama des techno <span class="done-check" style="display:none">✓</span></a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <img src="../logo.svg" alt="Quest for Change" class="footer-logo-img" />
+      <p class="footer-text">Programme d'accompagnement numérique</p>
+    </div>
+  </footer>
+
+  <script src="../js/quiz.js"></script>
+  <script>
+    const questions = [
+      {
+        question: "Quel est l'objectif principal d'un test utilisateur ?",
+        options: [
+          "Vérifier que le code fonctionne correctement",
+          "Observer comment de vraies personnes interagissent avec le produit pour identifier les problèmes",
+          "Démontrer que le produit est prêt pour le lancement",
+          "Recueillir des données quantitatives sur les performances"
+        ],
+        correct: 1
+      },
+      {
+        question: "Combien d'utilisateurs faut-il pour un test utilisateur qualitatif efficace ?",
+        options: [
+          "Au moins 100 pour être statistiquement fiable",
+          "Entre 3 et 8 personnes",
+          "Exactement 50 participants",
+          "Plus de 200 pour couvrir tous les profils"
+        ],
+        correct: 1
+      },
+      {
+        question: "Qu'est-ce que la méthode 'think aloud' (penser à voix haute) ?",
+        options: [
+          "L'utilisateur lit les instructions à voix haute avant de commencer",
+          "L'utilisateur verbalise ses pensées et réactions pendant qu'il utilise le produit",
+          "Le facilitateur explique chaque fonctionnalité pendant le test",
+          "L'équipe commente le comportement de l'utilisateur en direct"
+        ],
+        correct: 1
+      },
+      {
+        question: "Quelle est la bonne posture du facilitateur pendant un test utilisateur ?",
+        options: [
+          "Guider l'utilisateur vers les bonnes actions quand il bloque",
+          "Expliquer comment utiliser chaque fonctionnalité",
+          "Observer sans intervenir et poser des questions ouvertes",
+          "Défendre les choix de design quand l'utilisateur les critique"
+        ],
+        correct: 2
+      },
+      {
+        question: "Comment exploiter les résultats d'un test utilisateur ?",
+        options: [
+          "Implémenter immédiatement tous les changements suggérés par les utilisateurs",
+          "Ignorer les retours négatifs s'ils viennent d'une minorité",
+          "Identifier les patterns récurrents et prioriser les problèmes par impact",
+          "Refaire entièrement le design après chaque session de test"
+        ],
+        correct: 2
+      }
+    ];
+    const quizInstance = new Quiz('tests-utilisateurs', questions, 'maquette');
+  </script>
+</body>
+</html>

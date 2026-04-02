@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notions UX/UI — Culturation</title>
+  <link rel="icon" href="../favicon.png" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-back">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 8H3M7 4l-4 4 4 4"/></svg>
+        Tous les modules
+      </a>
+      <img src="../logo.svg" alt="Quest for Change" class="nav-logo-img nav-logo-dark" />
+    </div>
+  </nav>
+
+  <header class="module-hero maquette">
+    <div class="module-hero-inner">
+      <div class="module-section-tag maquette">🎨 Maquette</div>
+      <h1>🎯 Notions UX/UI</h1>
+      <p class="module-hero-desc">Concevoir des interfaces utiles, compréhensibles et orientées utilisateurs.</p>
+    </div>
+  </header>
+
+  <div id="completed-banner" style="display:none; background: #D1FAE5; border-bottom: 1px solid #A7F3D0; padding: 12px 24px; align-items: center; gap: 12px;">
+    <span style="font-size:18px">✅</span>
+    <span style="font-size:14px; font-weight:600; color: #059669;">Module complété — Score : <span class="banner-score"></span></span>
+    <button onclick="scrollToQuiz()" style="margin-left:auto; font-size:13px; background:none; border:1px solid #059669; color:#059669; padding:4px 12px; border-radius:6px; cursor:pointer; font-family:inherit;">Retenter le quiz</button>
+  </div>
+
+  <div class="module-main">
+    <div class="module-content">
+
+      <div class="content-section">
+        <h2>UX vs UI : quelle différence ?</h2>
+        <p><strong>UX (User Experience)</strong> désigne l'expérience globale d'un utilisateur avec un produit : est-ce qu'il comprend comment l'utiliser ? Atteint-il son objectif facilement ? Est-il satisfait ?</p>
+        <p><strong>UI (User Interface)</strong> désigne la couche visuelle et interactive : les boutons, les couleurs, la typographie, les icônes. L'UI sert l'UX — un beau design qui désoriente est mauvais.</p>
+        <div class="callout info">
+          <span class="callout-icon">💡</span>
+          <p><strong>Analogie :</strong> L'UX est l'architecture d'un bâtiment (flux de circulation, logique des pièces), l'UI est la décoration intérieure (couleurs, matériaux, mobilier).</p>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>Concepts clés à maîtriser</h2>
+        <div class="concepts-grid">
+          <div class="concept-card">
+            <div class="concept-card-icon">🗺️</div>
+            <h4>User Flow</h4>
+            <p>Le chemin que parcourt un utilisateur pour accomplir une tâche. Ex : s'inscrire → paramétrer son profil → faire sa première action.</p>
+          </div>
+          <div class="concept-card">
+            <div class="concept-card-icon">📐</div>
+            <h4>Hiérarchie visuelle</h4>
+            <p>Organiser les éléments pour guider l'œil : taille, couleur, contraste, espacement. L'utilisateur doit savoir quoi regarder en premier.</p>
+          </div>
+          <div class="concept-card">
+            <div class="concept-card-icon">🖐️</div>
+            <h4>Affordance</h4>
+            <p>La capacité d'un élément à suggérer son utilisation. Un bouton doit "ressembler à un bouton" pour être cliqué sans hésitation.</p>
+          </div>
+          <div class="concept-card">
+            <div class="concept-card-icon">♿</div>
+            <h4>Accessibilité</h4>
+            <p>Concevoir pour tous les utilisateurs, y compris ceux avec des handicaps visuels, moteurs ou cognitifs. C'est aussi un critère légal.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>Les erreurs classiques à éviter</h2>
+        <ul class="key-points">
+          <li>Concevoir pour soi plutôt que pour l'utilisateur (le "biais du concepteur")</li>
+          <li>Trop de fonctionnalités sur un seul écran — surcharger l'interface nuit à la compréhension</li>
+          <li>Négliger les états vides, de chargement et d'erreur — ce sont des moments clés de l'expérience</li>
+          <li>Ignorer la cohérence : même composant = même comportement sur toute l'application</li>
+          <li>Penser mobile en dernier — le mobile doit souvent être le point de départ</li>
+        </ul>
+      </div>
+
+      <div id="quiz-anchor" class="content-section quiz-section">
+        <h2>🕹️ Quiz de validation</h2>
+        <p class="quiz-intro">5 questions pour valider ta compréhension du module. Tu dois obtenir 80% pour valider.</p>
+        <div id="quiz-container"></div>
+        <div id="quiz-result" class="quiz-result">
+          <div class="quiz-result-score"></div>
+          <h3 class="quiz-result-title"></h3>
+          <p class="quiz-result-desc"></p>
+          <div class="quiz-result-actions">
+            <button class="btn btn-ghost" onclick="retryQuiz()">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8a6 6 0 1010.5-4M2 4v4h4"/></svg>
+              Recommencer
+            </button>
+            <a href="../index.html" class="btn btn-primary-maquette">Retour aux modules <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <aside class="module-sidebar">
+      <div class="sidebar-card">
+        <h4>Modules — Maquette</h4>
+        <ul class="sidebar-module-list">
+          <li><a href="mindmapping.html" data-module="mindmapping">🧠 Mindmapping <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="ux-ui.html" class="active" data-module="ux-ui">🎯 Notions UX/UI <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="fonctionnalite.html" data-module="fonctionnalite">🧱 Construire une fonctionnalité <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="figma.html" data-module="figma">🖌️ Figma <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="tests-utilisateurs.html" data-module="tests-utilisateurs">🧪 Tests utilisateurs <span class="done-check" style="display:none">✓</span></a></li>
+        </ul>
+      </div>
+      <div class="sidebar-card">
+        <h4>Modules — Technologies</h4>
+        <ul class="sidebar-module-list">
+          <li><a href="piloter-it.html" data-module="piloter-it">🧭 Piloter un projet IT <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="onboarder-cto.html" data-module="onboarder-cto">🧑‍💻 Onboarder un CTO <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="cahier-des-charges.html" data-module="cahier-des-charges">📝 Cahier des charges <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="business-model.html" data-module="business-model">💼 Business Model <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="intro-ia.html" data-module="intro-ia">🤖 Intro IA <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="panorama-tech.html" data-module="panorama-tech">🗺️ Panorama des techno <span class="done-check" style="display:none">✓</span></a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <img src="../logo.svg" alt="Quest for Change" class="footer-logo-img" />
+      <p class="footer-text">Programme d'accompagnement numérique</p>
+    </div>
+  </footer>
+
+  <script src="../js/quiz.js"></script>
+  <script>
+    const questions = [
+      {
+        question: "Quelle est la différence principale entre UX et UI ?",
+        options: [
+          "L'UX s'occupe des couleurs, l'UI de la navigation",
+          "L'UX concerne l'expérience globale de l'utilisateur, l'UI l'aspect visuel et interactif",
+          "L'UX est réservé aux développeurs, l'UI aux designers",
+          "Il n'y a aucune différence, ce sont des synonymes"
+        ],
+        correct: 1
+      },
+      {
+        question: "Qu'est-ce qu'un 'user flow' ?",
+        options: [
+          "Un rapport de bug utilisateur",
+          "La charte graphique d'une interface",
+          "Le chemin qu'emprunte un utilisateur pour accomplir une tâche précise",
+          "Le nombre d'utilisateurs actifs sur le produit"
+        ],
+        correct: 2
+      },
+      {
+        question: "Quel est le principe de la hiérarchie visuelle ?",
+        options: [
+          "Classer les utilisateurs par niveau d'importance",
+          "Organiser les éléments visuels pour guider l'attention selon leur importance",
+          "Limiter le nombre de couleurs à 3 maximum",
+          "Utiliser uniquement des polices serif pour les titres"
+        ],
+        correct: 1
+      },
+      {
+        question: "Qu'est-ce que le principe d'affordance en UX ?",
+        options: [
+          "Le coût de développement de l'interface",
+          "La capacité d'un élément à suggérer lui-même son utilisation",
+          "La vitesse de chargement d'une page",
+          "Le nombre de clics pour accéder à une fonctionnalité"
+        ],
+        correct: 1
+      },
+      {
+        question: "Pourquoi teste-t-on avec des utilisateurs réels plutôt que de se fier à son propre jugement ?",
+        options: [
+          "Pour respecter la législation RGPD",
+          "Car les utilisateurs paient pour le produit",
+          "Pour éviter le biais du concepteur et découvrir les usages réels",
+          "Car c'est plus rapide que de tester soi-même"
+        ],
+        correct: 2
+      }
+    ];
+    const quizInstance = new Quiz('ux-ui', questions, 'maquette');
+  </script>
+</body>
+</html>

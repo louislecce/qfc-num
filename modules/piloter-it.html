@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Piloter un projet IT — Culturation</title>
+  <link rel="icon" href="../favicon.png" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-back">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 8H3M7 4l-4 4 4 4"/></svg>
+        Tous les modules
+      </a>
+      <img src="../logo.svg" alt="Quest for Change" class="nav-logo-img nav-logo-dark" />
+    </div>
+  </nav>
+
+  <header class="module-hero tech">
+    <div class="module-hero-inner">
+      <div class="module-section-tag tech">🖥️ Technologies</div>
+      <h1>🧭 Piloter un projet IT</h1>
+      <p class="module-hero-desc">Structurer le travail, prioriser, suivre l'avancement et faciliter la collaboration avec les équipes tech.</p>
+    </div>
+  </header>
+
+  <div id="completed-banner" style="display:none; background: #D1FAE5; border-bottom: 1px solid #A7F3D0; padding: 12px 24px; align-items: center; gap: 12px;">
+    <span style="font-size:18px">✅</span>
+    <span style="font-size:14px; font-weight:600; color: #059669;">Module complété — Score : <span class="banner-score"></span></span>
+    <button onclick="scrollToQuiz()" style="margin-left:auto; font-size:13px; background:none; border:1px solid #059669; color:#059669; padding:4px 12px; border-radius:6px; cursor:pointer; font-family:inherit;">Retenter le quiz</button>
+  </div>
+
+  <div class="module-main">
+    <div class="module-content">
+
+      <div class="content-section">
+        <h2>Le projet IT vu du côté business</h2>
+        <p>Piloter un projet IT ne signifie pas écrire du code — cela signifie s'assurer que les bonnes choses sont construites dans le bon ordre, avec les bons interlocuteurs, et que l'avancement est visible pour tous.</p>
+        <p>Le piège le plus fréquent : traiter un projet IT comme un projet classique avec un Gantt figé. Les projets numériques nécessitent une approche <strong>itérative et adaptative</strong> — on apprend en construisant.</p>
+        <div class="callout info-tech">
+          <span class="callout-icon">⚡</span>
+          <p><strong>Approche agile :</strong> Plutôt que de tout planifier sur 6 mois, on découpe en sprints de 1-2 semaines avec des objectifs précis. Chaque sprint livre quelque chose de tangible et permet d'ajuster le cap.</p>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>Les concepts fondamentaux</h2>
+        <div class="concepts-grid">
+          <div class="concept-card">
+            <div class="concept-card-icon">🏃</div>
+            <h4>Sprint</h4>
+            <p>Période de travail courte et définie (1-2 semaines) avec des objectifs précis. À la fin, un livrable concret.</p>
+          </div>
+          <div class="concept-card">
+            <div class="concept-card-icon">📋</div>
+            <h4>Backlog</h4>
+            <p>Liste priorisée de toutes les tâches et fonctionnalités. Vivant, revu à chaque sprint selon les apprentissages.</p>
+          </div>
+          <div class="concept-card">
+            <div class="concept-card-icon">🎯</div>
+            <h4>Product Owner</h4>
+            <p>Représente les utilisateurs, priorise le backlog et décide quoi construire. Interface entre business et tech.</p>
+          </div>
+          <div class="concept-card">
+            <div class="concept-card-icon">☀️</div>
+            <h4>Stand-up daily</h4>
+            <p>15 min chaque matin : quoi fait hier, quoi prévu aujourd'hui, quels blocages. Synchronise l'équipe rapidement.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>Mesurer l'avancement efficacement</h2>
+        <ul class="key-points">
+          <li>Suivre les fonctionnalités livrées vs prévues — pas les heures travaillées</li>
+          <li>Maintenir un tableau Kanban (To Do / In Progress / Done) visible de tous</li>
+          <li>Organiser une rétrospective à la fin de chaque sprint : ce qui a bien marché, ce qui bloque</li>
+          <li>Mesurer la vélocité de l'équipe pour mieux estimer les sprints suivants</li>
+          <li>Documenter les décisions techniques importantes pour éviter de les reperdre</li>
+        </ul>
+        <div class="callout info-tech">
+          <span class="callout-icon">🛠️</span>
+          <p><strong>Outils recommandés :</strong> Linear, Jira, Notion (base de données), GitHub Projects — le meilleur outil est celui que toute l'équipe utilise réellement.</p>
+        </div>
+      </div>
+
+      <div id="quiz-anchor" class="content-section quiz-section">
+        <h2>🕹️ Quiz de validation</h2>
+        <p class="quiz-intro">5 questions pour valider ta compréhension du module. Tu dois obtenir 80% pour valider.</p>
+        <div id="quiz-container"></div>
+        <div id="quiz-result" class="quiz-result">
+          <div class="quiz-result-score"></div>
+          <h3 class="quiz-result-title"></h3>
+          <p class="quiz-result-desc"></p>
+          <div class="quiz-result-actions">
+            <button class="btn btn-ghost" onclick="retryQuiz()">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8a6 6 0 1010.5-4M2 4v4h4"/></svg>
+              Recommencer
+            </button>
+            <a href="../index.html" class="btn btn-primary-tech">Retour aux modules <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <aside class="module-sidebar">
+      <div class="sidebar-card">
+        <h4>Modules — Maquette</h4>
+        <ul class="sidebar-module-list">
+          <li><a href="mindmapping.html" data-module="mindmapping">🧠 Mindmapping <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="ux-ui.html" data-module="ux-ui">🎯 Notions UX/UI <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="fonctionnalite.html" data-module="fonctionnalite">🧱 Construire une fonctionnalité <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="figma.html" data-module="figma">🖌️ Figma <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="tests-utilisateurs.html" data-module="tests-utilisateurs">🧪 Tests utilisateurs <span class="done-check" style="display:none">✓</span></a></li>
+        </ul>
+      </div>
+      <div class="sidebar-card">
+        <h4>Modules — Technologies</h4>
+        <ul class="sidebar-module-list">
+          <li><a href="piloter-it.html" class="active" data-module="piloter-it">🧭 Piloter un projet IT <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="onboarder-cto.html" data-module="onboarder-cto">🧑‍💻 Onboarder un CTO <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="cahier-des-charges.html" data-module="cahier-des-charges">📝 Cahier des charges <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="business-model.html" data-module="business-model">💼 Business Model <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="intro-ia.html" data-module="intro-ia">🤖 Intro IA <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="panorama-tech.html" data-module="panorama-tech">🗺️ Panorama des techno <span class="done-check" style="display:none">✓</span></a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <img src="../logo.svg" alt="Quest for Change" class="footer-logo-img" />
+      <p class="footer-text">Programme d'accompagnement numérique</p>
+    </div>
+  </footer>
+
+  <script src="../js/quiz.js"></script>
+  <script>
+    const questions = [
+      {
+        question: "Qu'est-ce qu'un 'sprint' dans une méthodologie agile ?",
+        options: [
+          "Un test de performance technique sur les serveurs",
+          "Une période de travail définie (1-2 semaines) avec des objectifs précis",
+          "Un meeting d'urgence entre l'équipe tech et le business",
+          "La phase finale de déploiement d'une fonctionnalité"
+        ],
+        correct: 1
+      },
+      {
+        question: "Quel est le rôle du Product Owner dans un projet IT ?",
+        options: [
+          "Écrire le code des fonctionnalités prioritaires",
+          "Gérer les serveurs et l'infrastructure technique",
+          "Représenter les utilisateurs, prioriser le backlog et définir les objectifs",
+          "Recruter les développeurs pour le projet"
+        ],
+        correct: 2
+      },
+      {
+        question: "Qu'est-ce qu'un 'ticket' dans la gestion de projet IT ?",
+        options: [
+          "Un bon de commande pour du matériel informatique",
+          "Une tâche, bug ou fonctionnalité documentée et assignée dans l'outil de suivi",
+          "Un rapport d'incident de sécurité",
+          "Une facture de prestataire technique"
+        ],
+        correct: 1
+      },
+      {
+        question: "Pourquoi organiser des stand-up meetings quotidiens ?",
+        options: [
+          "Pour que le manager vérifie le travail de chaque développeur",
+          "Pour synchroniser l'équipe, identifier les blocages et maintenir l'alignement en 15 min",
+          "Pour présenter les nouvelles fonctionnalités aux clients",
+          "Pour planifier les congés de l'équipe"
+        ],
+        correct: 1
+      },
+      {
+        question: "Comment mesurer efficacement l'avancement d'un projet IT ?",
+        options: [
+          "En comptant le nombre de lignes de code écrites",
+          "En suivant le nombre d'heures travaillées par développeur",
+          "En comparant les fonctionnalités livrées aux objectifs définis et en suivant la vélocité",
+          "En consultant uniquement les retours de l'équipe commerciale"
+        ],
+        correct: 2
+      }
+    ];
+    const quizInstance = new Quiz('piloter-it', questions, 'tech');
+  </script>
+</body>
+</html>

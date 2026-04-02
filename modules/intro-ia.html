@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Intro IA — Culturation</title>
+  <link rel="icon" href="../favicon.png" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-back">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 8H3M7 4l-4 4 4 4"/></svg>
+        Tous les modules
+      </a>
+      <img src="../logo.svg" alt="Quest for Change" class="nav-logo-img nav-logo-dark" />
+    </div>
+  </nav>
+
+  <header class="module-hero tech">
+    <div class="module-hero-inner">
+      <div class="module-section-tag tech">🖥️ Technologies</div>
+      <h1>🤖 Intro IA</h1>
+      <p class="module-hero-desc">Comprendre les usages concrets de l'IA et savoir où elle apporte réellement de la valeur.</p>
+    </div>
+  </header>
+
+  <div id="completed-banner" style="display:none; background: #D1FAE5; border-bottom: 1px solid #A7F3D0; padding: 12px 24px; align-items: center; gap: 12px;">
+    <span style="font-size:18px">✅</span>
+    <span style="font-size:14px; font-weight:600; color: #059669;">Module complété — Score : <span class="banner-score"></span></span>
+    <button onclick="scrollToQuiz()" style="margin-left:auto; font-size:13px; background:none; border:1px solid #059669; color:#059669; padding:4px 12px; border-radius:6px; cursor:pointer; font-family:inherit;">Retenter le quiz</button>
+  </div>
+
+  <div class="module-main">
+    <div class="module-content">
+
+      <div class="content-section">
+        <h2>L'IA en 2024 : dépasser le buzz</h2>
+        <p>L'intelligence artificielle est partout dans les discours — mais dans la pratique, son intégration dans un produit numérique demande une lecture lucide. L'IA n'est pas une solution universelle : c'est un ensemble de techniques adaptées à des types de problèmes précis.</p>
+        <p>Pour un fondateur, la question n'est pas "comment intégrer de l'IA dans mon produit ?" mais <strong>"quel problème spécifique l'IA résout mieux qu'une autre approche ?"</strong></p>
+        <div class="callout info-tech">
+          <span class="callout-icon">🎯</span>
+          <p><strong>Cas d'usage réels :</strong> Personnalisation de contenu, analyse de grands volumes de données, automatisation de tâches répétitives, génération de contenu, reconnaissance d'images, traduction, support client... Chaque cas a une technologie IA adaptée.</p>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>Les grandes familles de l'IA</h2>
+        <div class="concepts-grid">
+          <div class="concept-card">
+            <div class="concept-card-icon">📈</div>
+            <h4>Machine Learning</h4>
+            <p>Algorithmes qui apprennent à partir de données sans être explicitement programmés. Ex : recommandations, détection de fraude, scoring.</p>
+          </div>
+          <div class="concept-card">
+            <div class="concept-card-icon">✍️</div>
+            <h4>IA Générative (LLM)</h4>
+            <p>Modèles capables de créer du contenu (texte, image, code). GPT-4, Claude, Gemini... Révolutionne la création de contenu et l'assistance.</p>
+          </div>
+          <div class="concept-card">
+            <div class="concept-card-icon">👁️</div>
+            <h4>Computer Vision</h4>
+            <p>Analyse et compréhension d'images et vidéos. Ex : reconnaissance de produits, contrôle qualité, modération de contenu.</p>
+          </div>
+          <div class="concept-card">
+            <div class="concept-card-icon">🗣️</div>
+            <h4>NLP / Traitement du langage</h4>
+            <p>Compréhension et génération du langage humain. Ex : chatbots, analyse de sentiment, résumé automatique, traduction.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>Intégrer l'IA responsablement</h2>
+        <ul class="key-points">
+          <li><strong>Identifier le bon cas d'usage :</strong> l'IA excelle dans la détection de patterns sur de grands volumes — pas pour tout</li>
+          <li><strong>Qualité des données d'abord :</strong> un modèle entraîné sur de mauvaises données produit de mauvais résultats (garbage in, garbage out)</li>
+          <li><strong>Biais algorithmiques :</strong> les modèles reproduisent et amplifient les biais présents dans les données d'entraînement</li>
+          <li><strong>RGPD et confidentialité :</strong> attention à ce que tu envoies à des API tierces — données personnelles incluses</li>
+          <li><strong>Dépendance aux tiers :</strong> s'appuyer sur OpenAI ou Google crée une dépendance stratégique à évaluer</li>
+        </ul>
+      </div>
+
+      <div id="quiz-anchor" class="content-section quiz-section">
+        <h2>🕹️ Quiz de validation</h2>
+        <p class="quiz-intro">5 questions pour valider ta compréhension du module. Tu dois obtenir 80% pour valider.</p>
+        <div id="quiz-container"></div>
+        <div id="quiz-result" class="quiz-result">
+          <div class="quiz-result-score"></div>
+          <h3 class="quiz-result-title"></h3>
+          <p class="quiz-result-desc"></p>
+          <div class="quiz-result-actions">
+            <button class="btn btn-ghost" onclick="retryQuiz()">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8a6 6 0 1010.5-4M2 4v4h4"/></svg>
+              Recommencer
+            </button>
+            <a href="../index.html" class="btn btn-primary-tech">Retour aux modules <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <aside class="module-sidebar">
+      <div class="sidebar-card">
+        <h4>Modules — Maquette</h4>
+        <ul class="sidebar-module-list">
+          <li><a href="mindmapping.html" data-module="mindmapping">🧠 Mindmapping <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="ux-ui.html" data-module="ux-ui">🎯 Notions UX/UI <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="fonctionnalite.html" data-module="fonctionnalite">🧱 Construire une fonctionnalité <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="figma.html" data-module="figma">🖌️ Figma <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="tests-utilisateurs.html" data-module="tests-utilisateurs">🧪 Tests utilisateurs <span class="done-check" style="display:none">✓</span></a></li>
+        </ul>
+      </div>
+      <div class="sidebar-card">
+        <h4>Modules — Technologies</h4>
+        <ul class="sidebar-module-list">
+          <li><a href="piloter-it.html" data-module="piloter-it">🧭 Piloter un projet IT <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="onboarder-cto.html" data-module="onboarder-cto">🧑‍💻 Onboarder un CTO <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="cahier-des-charges.html" data-module="cahier-des-charges">📝 Cahier des charges <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="business-model.html" data-module="business-model">💼 Business Model <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="intro-ia.html" class="active" data-module="intro-ia">🤖 Intro IA <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="panorama-tech.html" data-module="panorama-tech">🗺️ Panorama des techno <span class="done-check" style="display:none">✓</span></a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <img src="../logo.svg" alt="Quest for Change" class="footer-logo-img" />
+      <p class="footer-text">Programme d'accompagnement numérique</p>
+    </div>
+  </footer>
+
+  <script src="../js/quiz.js"></script>
+  <script>
+    const questions = [
+      {
+        question: "Qu'est-ce que le machine learning ?",
+        options: [
+          "Un langage de programmation spécialisé pour les robots",
+          "Une technique permettant aux algorithmes d'apprendre à partir de données sans être explicitement programmés",
+          "Un logiciel de reconnaissance vocale tout-en-un",
+          "Un protocole de communication entre systèmes IA"
+        ],
+        correct: 1
+      },
+      {
+        question: "Quelle est la différence entre l'IA générative et l'IA discriminative ?",
+        options: [
+          "L'IA générative est payante, l'IA discriminative est open source",
+          "L'IA générative crée du nouveau contenu, l'IA discriminative classe ou prédit à partir de données",
+          "L'IA générative fonctionne sans données d'entraînement",
+          "L'IA générative est une technologie plus ancienne"
+        ],
+        correct: 1
+      },
+      {
+        question: "Dans quel cas l'IA apporte-t-elle le plus de valeur dans un produit numérique ?",
+        options: [
+          "Pour remplacer entièrement l'équipe de développement",
+          "Pour automatiser des tâches répétitives, personnaliser l'expérience ou analyser de grandes masses de données",
+          "Uniquement pour les grandes entreprises avec des millions d'utilisateurs",
+          "Pour créer automatiquement des designs d'interface utilisateur"
+        ],
+        correct: 1
+      },
+      {
+        question: "Qu'est-ce qu'un 'prompt' dans le contexte des LLM ?",
+        options: [
+          "Un bug dans le code d'un modèle d'IA",
+          "L'instruction ou la question soumise au modèle pour obtenir une réponse",
+          "Un type spécifique de données d'entraînement",
+          "Un paramètre technique interne du modèle"
+        ],
+        correct: 1
+      },
+      {
+        question: "Quels sont les risques principaux à considérer lors de l'intégration de l'IA dans un produit ?",
+        options: [
+          "L'IA est toujours précise donc les risques sont négligeables",
+          "Uniquement le coût d'implémentation technique",
+          "Les biais algorithmiques, la confidentialité des données et la dépendance à des services tiers",
+          "Le risque que l'IA devienne autonome et incontrôlable"
+        ],
+        correct: 2
+      }
+    ];
+    const quizInstance = new Quiz('intro-ia', questions, 'tech');
+  </script>
+</body>
+</html>

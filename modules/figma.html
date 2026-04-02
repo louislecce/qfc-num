@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Figma : du wireframe au prototype — Culturation</title>
+  <link rel="icon" href="../favicon.png" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-back">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 8H3M7 4l-4 4 4 4"/></svg>
+        Tous les modules
+      </a>
+      <img src="../logo.svg" alt="Quest for Change" class="nav-logo-img nav-logo-dark" />
+    </div>
+  </nav>
+
+  <header class="module-hero maquette">
+    <div class="module-hero-inner">
+      <div class="module-section-tag maquette">🎨 Maquette</div>
+      <h1>🖌️ Figma : du wireframe au prototype</h1>
+      <p class="module-hero-desc">Créer rapidement des maquettes et prototypes pour tester des hypothèses.</p>
+    </div>
+  </header>
+
+  <div id="completed-banner" style="display:none; background: #D1FAE5; border-bottom: 1px solid #A7F3D0; padding: 12px 24px; align-items: center; gap: 12px;">
+    <span style="font-size:18px">✅</span>
+    <span style="font-size:14px; font-weight:600; color: #059669;">Module complété — Score : <span class="banner-score"></span></span>
+    <button onclick="scrollToQuiz()" style="margin-left:auto; font-size:13px; background:none; border:1px solid #059669; color:#059669; padding:4px 12px; border-radius:6px; cursor:pointer; font-family:inherit;">Retenter le quiz</button>
+  </div>
+
+  <div class="module-main">
+    <div class="module-content">
+
+      <div class="content-section">
+        <h2>Figma, l'outil central du design produit</h2>
+        <p>Figma est aujourd'hui l'outil de référence pour concevoir des interfaces, collaborer en temps réel et produire des prototypes interactifs. Il permet de couvrir tout le spectre : du croquis basse fidélité au prototype cliquable prêt pour les tests utilisateurs.</p>
+        <p>L'objectif n'est pas de maîtriser Figma en expert — c'est de savoir l'utiliser comme outil de <strong>communication et de validation</strong>, pas comme outil de livraison artistique.</p>
+        <div class="callout info">
+          <span class="callout-icon">💡</span>
+          <p><strong>Principe clé :</strong> Une maquette Figma doit permettre de tester une hypothèse produit, pas de décorer un livrable. Le but est d'échouer vite et à moindre coût.</p>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>Les 3 niveaux de fidélité</h2>
+        <div class="concepts-grid">
+          <div class="concept-card">
+            <div class="concept-card-icon">⬜</div>
+            <h4>Wireframe (basse fidélité)</h4>
+            <p>Boîtes grises, texte placeholder. L'objectif est la structure et le flux, pas le visuel. Rapide à produire, facile à modifier.</p>
+          </div>
+          <div class="concept-card">
+            <div class="concept-card-icon">🎨</div>
+            <h4>Mockup (haute fidélité)</h4>
+            <p>Couleurs, typographie, icônes réels. Représente le rendu visuel final. Utile pour valider la D-A avec les parties prenantes.</p>
+          </div>
+          <div class="concept-card">
+            <div class="concept-card-icon">▶️</div>
+            <h4>Prototype (interactif)</h4>
+            <p>Liens entre les écrans, transitions, états. Simule l'expérience réelle pour les tests utilisateurs sans écrire de code.</p>
+          </div>
+          <div class="concept-card">
+            <div class="concept-card-icon">🔧</div>
+            <h4>Handoff (dev)</h4>
+            <p>Transmission aux développeurs avec espacements, couleurs et assets exportés. Figma génère automatiquement les specs CSS.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>Les fonctionnalités clés à connaître</h2>
+        <ul class="key-points">
+          <li><strong>Composants :</strong> éléments réutilisables (boutons, cartes) qui se mettent à jour partout en une fois</li>
+          <li><strong>Auto Layout :</strong> permet des frames qui s'adaptent automatiquement au contenu — indispensable pour des designs responsive</li>
+          <li><strong>Frames vs Groups :</strong> les frames supportent les contraintes de redimensionnement et l'auto-layout, préférez-les toujours</li>
+          <li><strong>Variables & styles :</strong> centralisez couleurs et typographies pour maintenir la cohérence sur tout le projet</li>
+          <li><strong>Mode Présentation :</strong> partagez un lien cliquable sans que l'interlocuteur ait besoin d'un compte Figma</li>
+        </ul>
+      </div>
+
+      <div id="quiz-anchor" class="content-section quiz-section">
+        <h2>🕹️ Quiz de validation</h2>
+        <p class="quiz-intro">5 questions pour valider ta compréhension du module. Tu dois obtenir 80% pour valider.</p>
+        <div id="quiz-container"></div>
+        <div id="quiz-result" class="quiz-result">
+          <div class="quiz-result-score"></div>
+          <h3 class="quiz-result-title"></h3>
+          <p class="quiz-result-desc"></p>
+          <div class="quiz-result-actions">
+            <button class="btn btn-ghost" onclick="retryQuiz()">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8a6 6 0 1010.5-4M2 4v4h4"/></svg>
+              Recommencer
+            </button>
+            <a href="../index.html" class="btn btn-primary-maquette">Retour aux modules <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <aside class="module-sidebar">
+      <div class="sidebar-card">
+        <h4>Modules — Maquette</h4>
+        <ul class="sidebar-module-list">
+          <li><a href="mindmapping.html" data-module="mindmapping">🧠 Mindmapping <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="ux-ui.html" data-module="ux-ui">🎯 Notions UX/UI <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="fonctionnalite.html" data-module="fonctionnalite">🧱 Construire une fonctionnalité <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="figma.html" class="active" data-module="figma">🖌️ Figma <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="tests-utilisateurs.html" data-module="tests-utilisateurs">🧪 Tests utilisateurs <span class="done-check" style="display:none">✓</span></a></li>
+        </ul>
+      </div>
+      <div class="sidebar-card">
+        <h4>Modules — Technologies</h4>
+        <ul class="sidebar-module-list">
+          <li><a href="piloter-it.html" data-module="piloter-it">🧭 Piloter un projet IT <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="onboarder-cto.html" data-module="onboarder-cto">🧑‍💻 Onboarder un CTO <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="cahier-des-charges.html" data-module="cahier-des-charges">📝 Cahier des charges <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="business-model.html" data-module="business-model">💼 Business Model <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="intro-ia.html" data-module="intro-ia">🤖 Intro IA <span class="done-check" style="display:none">✓</span></a></li>
+          <li><a href="panorama-tech.html" data-module="panorama-tech">🗺️ Panorama des techno <span class="done-check" style="display:none">✓</span></a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <img src="../logo.svg" alt="Quest for Change" class="footer-logo-img" />
+      <p class="footer-text">Programme d'accompagnement numérique</p>
+    </div>
+  </footer>
+
+  <script src="../js/quiz.js"></script>
+  <script>
+    const questions = [
+      {
+        question: "Quelle est la différence entre un wireframe et un prototype ?",
+        options: [
+          "Un wireframe est en couleurs, un prototype est en noir et blanc",
+          "Un wireframe est une structure basse fidélité, un prototype simule les interactions",
+          "Un wireframe est interactif, un prototype est statique",
+          "Il n'y a aucune différence entre les deux"
+        ],
+        correct: 1
+      },
+      {
+        question: "À quoi servent les 'composants' dans Figma ?",
+        options: [
+          "À exporter le code CSS automatiquement",
+          "À créer des éléments réutilisables qui se mettent à jour partout simultanément",
+          "À collaborer en temps réel avec l'équipe",
+          "À importer des photos dans le projet"
+        ],
+        correct: 1
+      },
+      {
+        question: "Qu'est-ce qu'un 'handoff' dans le processus de design ?",
+        options: [
+          "La validation finale du design par le client",
+          "La transmission des maquettes aux développeurs avec les specs techniques",
+          "Le transfert du projet vers un autre designer",
+          "L'archivage des anciennes versions du design"
+        ],
+        correct: 1
+      },
+      {
+        question: "Pourquoi privilégier les 'frames' plutôt que les 'groups' dans Figma ?",
+        options: [
+          "Les frames sont plus rapides à créer",
+          "Les frames supportent les contraintes de redimensionnement et l'auto-layout",
+          "Les groups peuvent contenir plus d'éléments",
+          "Les frames sont compatibles avec plus d'outils tiers"
+        ],
+        correct: 1
+      },
+      {
+        question: "Quel est l'avantage principal du prototypage rapide dans une démarche startup ?",
+        options: [
+          "Économiser sur les coûts de développement final",
+          "Valider des hypothèses et recueillir des retours avant d'investir dans le développement",
+          "Créer la version finale du produit plus rapidement",
+          "Remplacer entièrement la phase de développement"
+        ],
+        correct: 1
+      }
+    ];
+    const quizInstance = new Quiz('figma', questions, 'maquette');
+  </script>
+</body>
+</html>
